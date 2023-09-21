@@ -1,7 +1,16 @@
 [package]
 name = "chronoflake"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+authors = ["Graham Keenan graham.keenan@outlook.com"]
+license = "MIT OR Apache-2.0"
+description = "Generate unique IDs based on the Snowflake algorithm"
+readme = "README.md"
+documentation = "https://docs.rs/chronoflake"
+homepage = "https://github.com/Tyrannican/chronoflake"
+repository = "https://github.com/Tyrannican/chronoflake"
+keywords = ["unqiue", "identifier", "snowflake", "chronoflake"]
+categories = ["data-structures"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
