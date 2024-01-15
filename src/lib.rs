@@ -22,7 +22,7 @@ use chrono::Utc;
 pub const DEFAULT_EPOCH: u64 = 1288834974657;
 
 /// Unique ID generator
-#[derive(Debug, Hash, PartialEq, Eq)]
+#[derive(Clone, Debug, Hash, PartialEq, Eq)]
 pub struct IdGenerator {
     /// Time Epoch to use (in milliseconds)
     pub epoch: u64,
@@ -107,5 +107,15 @@ mod tests {
             assert!(prev_id != id);
             prev_id = id;
         }
+    }
+
+    #[test]
+    fn clone_works() {
+        let cf = IdGenerator::new(49);
+        let new_one = cf.clone();
+        assert_eq!(cf.epoch, new_one.epoch);
+        assert_eq!(cf.shard_id, new_one.shard_id);
+        assert_eq!(cf.sequence, new_one.sequence);
+        assert_eq!(cf.timestamp, new_one.timestamp);
     }
 }
